@@ -49,3 +49,7 @@ export function getItmeCountFromCart():number{
     const cartItems: CartItem[] = JSON.parse(localStorage.getItem(STORAGE_KEY) || "[]");
     return cartItems.reduce((sum,item) => sum + item.quantity, 0);
 }
+
+export function getCartItems(): CartItem[]{
+    return JSON.parse(localStorage.getItem(STORAGE_KEY) || "[]");
+}
